@@ -32,12 +32,16 @@ Depending on the quality of your dataset, the line on the map may or may not lin
 City Council has stated that the width of transition zones will likely be between 500ft and 700ft, with an absolute max of 850ft. Use the readio buttons to select which of these scenarios you want to visualize.
 
 ### Reading the Map
-Black Center Line: Street/Offset
+#### Black Center Line 
+Street/Offset - Use this to set the width of the street or align the data to the edge of the street if the line isn't centered
 
-Green: Corridor lot
+#### Green Zone
+Corridor lot - This shows how far back new corridor lots would be zoned
 
-Dark Blue - More intensive: 6 units/lot; 4-density bonus available; max 10 units with the density bonus
+#### Dark Blue
+More intensive lots - 6 units/lot; 4-density bonus available; max 10 units with the density bonus
 45' (there is a UNIT bonus but not a HEIGHT bonus
 
-Light Blue - Less intensive lot: 4 units/lot; 4-density bonus available; max. 8 units with the density bonus
+#### Light Blue
+Less intensive lots - 4 units/lot; 4-density bonus available; max. 8 units with the density bonus
 Base height is 35'; can have a 10' affordability bonus
