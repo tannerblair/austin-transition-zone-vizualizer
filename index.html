@@ -1,0 +1,38 @@
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+
+<script src="js/leaflet-corridor.js"></script>
+<script src="js/atx-transiton-map.js"></script>
+<script src="js/bounds.js"></script>
+
+<div id="mapid" style='width: 100%; height: 90%;'></div>
+<div>Offset (Adjust until inner line is even with the street edge)</div>
+<div class="laneslider">
+  <input type="range" min="0" max="6" value="0" class="slider" id="laneslider">
+</div>
+<div id="wchoice">
+    <input type="radio" id="avglowwitdth"
+     name="width" value=500 checked>
+    <label for="width_avg_low">Average Low (500ft)</label>
+    
+    <input type="radio" id="avgmedwitdth"
+     name="width" value=600>
+    <label for="width_avg_med">Average Medium (600ft)</label>
+    
+    <input type="radio" id="avghighwidth"
+     name="width" value=700>
+    <label for="width_avg_high">Average High (700ft)</label>
+        
+    <input type="radio" id="maxwitdth"
+     name="width" value=850>
+    <label for="width_max">Absolute Max (850ft)</label>
+<div>
+<script>
+    initializeMap(L, bounds, "wchoice", "laneslider")
+</script>
