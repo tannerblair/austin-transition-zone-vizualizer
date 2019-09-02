@@ -2,7 +2,7 @@
 A web app for visualizing the transition zone offsets proposed by City Council.
 
 ![](images/sample.png)
-![](images/sample-zoomed.png)
+![](images/sample-zoomed.PNG)
 
 ## DISCLAIMER
 I don't work for the city. I don't have a crystal ball. I'm just a guy that wondered what 500 ft would look like vs. 600 ft, etc. All of the other info I could find seemed heavily biased toward a conclusion, and I wanted to know the facts. 
