@@ -13,14 +13,12 @@ There are lots of factors that go in to what a lot will be zoned as, and this is
 ## Usage
 The offsets in this tool are based on a presentation given to [Austin City Council on August 28th, 2019](http://www.austintexas.gov/department/city-council/2019/20190828-spec.htm).
 
-It's still very much in an early state, so you have to manually provide GPS coordinates. The city publishes lots of good datasets [here](https://data.austintexas.gov/), but it's still a painful process to pull them in. Sorry in advance.
-
+The city publishes lots of good datasets [here](https://data.austintexas.gov/), and this is where I got the datasets used for this map.
 
 ### Setup
 
 1. Pull down the repository.
-2. Change js/bounds.js to contain your desired path/coordinates.
-3. Open index.html
+2. Open index.html
 
 ### Usage
 
