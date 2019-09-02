@@ -1,7 +1,10 @@
 # Austin Transition Zone Vizualizer
 A web app for visualizing the transition zone offsets proposed by City Council.
 
+An example of what the map looks like when loaded:
 ![](images/sample.png)
+
+An example of what it looks like when you zoom in to a specific corridor:
 ![](images/sample-zoomed.PNG)
 
 ## DISCLAIMER
