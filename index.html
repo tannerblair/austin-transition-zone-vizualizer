@@ -1,4 +1,4 @@
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
  <!-- Make sure you put this AFTER Leaflet's CSS -->
@@ -12,28 +12,45 @@
 <script src="js/bounds.js"></script>
 
 
-<div id="mapid" style="height: 80%; width:80%; margin:0 auto;"></div>
-<div>Offset (Adjust until inner line is even with the street edge)</div>
-<div class="laneslider">
-  <input type="range" min="0" max="6" value="3" class="slider" id="laneslider">
-</div>
-<div id="wchoice">
-    <input type="radio" id="avglowwitdth"
-     name="width" value=500 checked>
-    <label for="width_avg_low">Average Low (500ft)</label>
-    
-    <input type="radio" id="avgmedwitdth"
-     name="width" value=600>
-    <label for="width_avg_med">Average Medium (600ft)</label>
-    
-    <input type="radio" id="avghighwidth"
-     name="width" value=700>
-    <label for="width_avg_high">Average High (700ft)</label>
-        
-    <input type="radio" id="maxwitdth"
-     name="width" value=850>
-    <label for="width_max">Absolute Max (850ft)</label>
-<div>
+<body>
+    <div id="transition-map-frame" style="font-family: sans-serif"> 
+        <div style="text-align: center; font-size: 22; color: darkblue;">Imagine Austin Corridors with Transition Zones</div>
+        <p></p>
+        <div id="mapid" style="height: 80%; width:80%; margin:0 auto;"></div>
+        <p></p>
+        <div id="offset_div" style="text-align: center">
+            <div>Offset (Adjust until inner line is even with the street edge)</div>
+            <div class="laneslider">
+                <input type="range" min="0" max="6" value="3" class="slider" id="laneslider">
+            </div>
+        </div>
+        <p></p>
+        <div id="transition_div" style="text-align: center;">
+            <div>Transition Zone Width</div>
+            <div id="wchoice">
+                <input type="radio" id="avglowwitdth"
+                 name="width" value=500 checked>
+                <label for="width_avg_low">Average Low (500ft)</label>
+
+                <input type="radio" id="avgmedwitdth"
+                 name="width" value=600>
+                <label for="width_avg_med">Average Medium (600ft)</label>
+
+                <input type="radio" id="avghighwidth"
+                 name="width" value=700>
+                <label for="width_avg_high">Average High (700ft)</label>
+
+                <input type="radio" id="maxwitdth"
+                 name="width" value=850>
+                <label for="width_max">Absolute Max (850ft)</label>
+            </div>
+        </div>
+        <p></p>
+        <div id="gh_link" style="text-align: center;">
+            <a href="https://github.com/tannerblair/austin-transition-zone-vizualizer">Want to see how it's made? Source code is available here.</a>
+        </div>
+    </div>
+</body>
 <script>
     $.ajaxSetup({
     async: false
@@ -45,11 +62,10 @@
     });
     
     var boundsArray = [];
-    for (c of corridors.data){
+    for (c of corridors.data) {
         boundsArray.push(parseMultilineString(c[8]));
     }
     
-    initializeMap(L, boundsArray, "wchoice", "laneslider");
-
+    var mymap = initializeMap(L, boundsArray, "wchoice", "laneslider");
 
 </script>

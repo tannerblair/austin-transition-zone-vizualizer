@@ -1,6 +1,8 @@
 function parseMultilineString(string) {
     "use strict";
-    var data = string.substring(18, string.length - 2);
+    var data = string.substring(16);
+    data = data.split("(").join("");
+    data = data.split(")").join("");
     data = data.split(", ");
     var parsed = [];
     for (let pair of data) {
@@ -10,4 +12,3 @@ function parseMultilineString(string) {
     }
     return parsed;
 }
-

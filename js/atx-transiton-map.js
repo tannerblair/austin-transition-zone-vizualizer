@@ -48,7 +48,6 @@ function createMap(L, boundsArray, latitude, longitude, zoom, zonecolor, width_i
     
     T.update = function () {
         T.layers.clearLayers();
-
         for (let b of boundsArray){
             T.addBounds(b);
 
@@ -69,7 +68,7 @@ function createMap(L, boundsArray, latitude, longitude, zoom, zonecolor, width_i
     
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 16,
+        maxZoom: 18,
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoidGFubmVyYmxhaXIiLCJhIjoiY2swMDU3NzY2MjR4ejNubWpidm1pNnY2diJ9.kyPKhliZeTpxlSYmkMn-nA'
     }).addTo(T.map);
@@ -91,5 +90,7 @@ function initializeMap(L, bounds, width_id, offset_id) {
     };
     
     mymap.update();
+    
+    return mymap;
 }
 
