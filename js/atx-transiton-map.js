@@ -1,10 +1,10 @@
-function createMap(L, bounds, latitude, longitude, zoom, zonecolor, width_id, offset_id) {
+function createMap(L, boundsArray, latitude, longitude, zoom, zonecolor, width_id, offset_id) {
     "use strict";
     var T = {"map": null, "zonecolor": zonecolor, "w": null, "offset": null, "style": {"medium": null, "heavy": null, "corridor": null, "offset": null}, "update": null},
         opacity = 0.1;
     T.layers = L.layerGroup();
 
-    T.map = L.map('mapid').setView(bounds[0], zoom);
+    T.map = L.map('mapid').setView([30.272597, -97.752100], zoom);
     
     T.offset = function () {
         return document.getElementById(offset_id).value * 3.7;
@@ -46,18 +46,30 @@ function createMap(L, bounds, latitude, longitude, zoom, zonecolor, width_id, of
         };
     };
     
-    T.update = function update() {
+    T.update = function () {
         T.layers.clearLayers();
+
+        for (let b of boundsArray){
+            T.addBounds(b);
+
+        }
+    };
+    
+    T.addBounds = function addBounds(bounds) {
         L.corridor(bounds, T.style.medium()).addTo(T.layers);
         L.corridor(bounds, T.style.heavy()).addTo(T.layers);
         L.corridor(bounds, T.style.corridor()).addTo(T.layers);
         L.corridor(bounds, T.style.offset()).addTo(T.layers);
         T.layers.addTo(T.map);
-    };
+    }
+    
+    T.clearLayers = function() {
+        T.map.clearLayers();
+    }
     
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
+        maxZoom: 16,
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoidGFubmVyYmxhaXIiLCJhIjoiY2swMDU3NzY2MjR4ejNubWpidm1pNnY2diJ9.kyPKhliZeTpxlSYmkMn-nA'
     }).addTo(T.map);
@@ -66,7 +78,7 @@ function createMap(L, bounds, latitude, longitude, zoom, zonecolor, width_id, of
 
 function initializeMap(L, bounds, width_id, offset_id) {
     "use strict";
-    var mymap = createMap(L, bounds, 30.352470, -97.699587, 15, "blue", width_id, offset_id),
+    var mymap = createMap(L, bounds, 30.352470, -97.699587, 11, "blue", width_id, offset_id),
         offset = document.getElementById(offset_id),
         width = document.getElementById(width_id);
     
