@@ -27,7 +27,7 @@ It's still very much in an early state, so you have to manually provide GPS coor
 #### Offset
 Depending on the quality of your dataset, the line on the map may or may not line up cleanly with the edge of your street. You can adjust this by sliding offset until the black line in the middle is aligned with the street at the point you're examining.
 
-#### Street Width
+#### Transition Zone Width
 
 City Council has stated that the width of transition zones will likely be between 500ft and 700ft, with an absolute max of 850ft. Use the readio buttons to select which of these scenarios you want to visualize.
 
