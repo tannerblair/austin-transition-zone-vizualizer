@@ -4,7 +4,7 @@ function createMap(L, bounds, latitude, longitude, zoom, zonecolor, width_id, of
         opacity = 0.1;
     T.layers = L.layerGroup();
 
-    T.map = L.map('mapid').setView([latitude, longitude], zoom);
+    T.map = L.map('mapid').setView(bounds[0], zoom);
     
     T.offset = function () {
         return document.getElementById(offset_id).value * 3.7;
