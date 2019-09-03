@@ -22,12 +22,7 @@ The offsets in this tool are based on a presentation given to [Austin City Counc
 
 The city publishes lots of good datasets [here](https://data.austintexas.gov/), and this is where I got the datasets used for this map.
 
-### Setup
-
-1. Pull down the repository.
-2. Open index.html
-
-### Usage
+### Using the Map
 
 #### Offset
 Depending on the quality of your dataset, the line on the map may or may not line up cleanly with the edge of your street. You can adjust this by sliding offset until the black line in the middle is aligned with the street at the point you're examining.
